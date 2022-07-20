@@ -22,19 +22,19 @@ namespace PlacesYouveBeen.Tests
       Assert.AreEqual(typeof(Place), newPlace.GetType());
     }
 
-    // [TestMethod]
-    // public void GetDescription_ReturnsDescription_String()
-    // {
-    //   //Arrange
-    //   string description = "Walk the dog.";
+    [TestMethod]
+    public void GetCityName_ReturnCityName_String()
+    {
+      //Arrange
+      string cityName = "Portland.";
 
-    //   //Act
-    //   Item newItem = new Item(description);
-    //   string result = newItem.Description;
+      //Act
+      Place newPlace = new Place(cityName);
+      string result = newPlace.CityName;
 
-    //   //Assert
-    //   Assert.AreEqual(description, result);
-    // }
+      //Assert
+      Assert.AreEqual(cityName, result);
+    }
 
   //   [TestMethod]
   //   public void SetDescription_SetDescription_String()
