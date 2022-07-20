@@ -79,20 +79,20 @@ namespace PlacesYouveBeen.Tests
     Assert.AreEqual(1, result);
   }
 
-  //  [TestMethod]
-  // public void Find_ReturnsCorrectItem_Item()
-  // {
-  //   //Arrange
-  //   string description01 = "Walk the dog";
-  //   string description02 = "Wash the dishes";
-  //   Item newItem1 = new Item(description01);
-  //   Item newItem2 = new Item(description02);
+   [TestMethod]
+  public void Find_ReturnsCorrectPlace_Place()
+  {
+    //Arrange
+    string cityName01 = "Portland";
+    string cityName02 = "Aberdeen";
+    Place newPlace1 = new Place(cityName01);
+    Place newPlace2 = new Place(cityName02);
 
-  //   //Act
-  //   Item result = Item.Find(2);
+    //Act
+    Place result = Place.Find(2);
 
-  //   //Assert
-  //   Assert.AreEqual(newItem2, result);
-  // }
+    //Assert
+    Assert.AreEqual(newPlace2, result);
+  }
   }
 }
