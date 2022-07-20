@@ -6,14 +6,13 @@ using System;
 namespace PlacesYouveBeen.Tests
 {
   [TestClass]
-  public class PlacesTests 
-  // : IDisposable
+  public class PlacesTests : IDisposable
   {
 
-    // public void Dispose()
-    // {
-    //   Place.ClearAll();
-    // }
+    public void Dispose()
+    {
+      Place.ClearAll();
+    }
 
     [TestMethod]
     public void PlaceConstructor_CreatesInstanceOfPlace_Place()
@@ -36,34 +35,18 @@ namespace PlacesYouveBeen.Tests
       Assert.AreEqual(cityName, result);
     }
 
-  //   [TestMethod]
-  //   public void SetDescription_SetDescription_String()
-  //   {
-  //     //Arrange
-  //     string description = "Walk the dog.";
-  //     Item newItem = new Item(description);
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_PlaceList()
+    {
+      // Arrange
+      List<Place> newPlace = new List<Place> { };
 
-  //     //Act
-  //     string updatedDescription = "Do the dishes";
-  //     newItem.Description = updatedDescription;
-  //     string result = newItem.Description;
+      // Act
+      List<Place> result = Place.GetAll();
 
-  //     //Assert
-  //     Assert.AreEqual(updatedDescription, result);
-  //   }
-
-  //   [TestMethod]
-  //   public void GetAll_ReturnsEmptyList_ItemList()
-  //   {
-  //     // Arrange
-  //     List<Item> newList = new List<Item> { };
-
-  //     // Act
-  //     List<Item> result = Item.GetAll();
-
-  //     // Assert
-  //     CollectionAssert.AreEqual(newList, result);
-  //   }
+      // Assert
+      CollectionAssert.AreEqual(newPlace, result);
+    }
 
   //   [TestMethod]
   //   public void GetAll_ReturnsItems_ItemList()
