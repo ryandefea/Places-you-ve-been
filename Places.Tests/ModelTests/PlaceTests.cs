@@ -36,7 +36,7 @@ namespace PlacesYouveBeen.Tests
     }
 
     [TestMethod]
-    public void GetAll_ReturnsEmptyList_PlaceList()
+    public void GetAll_ReturnEmptyList_PlaceList()
     {
       // Arrange
       List<Place> newPlace = new List<Place> { };
@@ -48,22 +48,22 @@ namespace PlacesYouveBeen.Tests
       CollectionAssert.AreEqual(newPlace, result);
     }
 
-  //   [TestMethod]
-  //   public void GetAll_ReturnsItems_ItemList()
-  //   {
-  //     //Arrange
-  //     string description01 = "Walk the dog";
-  //     string description02 = "Wash the dishes";
-  //     Item newItem1 = new Item(description01);
-  //     Item newItem2 = new Item(description02);
-  //     List<Item> newList = new List<Item> { newItem1, newItem2 };
+    [TestMethod]
+    public void GetAll_ReturnPlaces_PlaceList()
+    {
+      //Arrange
+      string cityName01 = "Portland";
+      string cityName02 = "Aberdeen";
+      Place newPlace1 = new Place(cityName01);
+      Place newPlace2 = new Place(cityName02);
+      List<Place> newPlace = new List<Place> { newPlace1, newPlace2 };
 
-  //     //Act
-  //     List<Item> result = Item.GetAll();
+      //Act
+      List<Place> result = Place.GetAll();
 
-  //     //Assert
-  //     CollectionAssert.AreEqual(newList, result);
-  //   }
+      //Assert
+      CollectionAssert.AreEqual(newPlace, result);
+    }
 
   //     [TestMethod]
   // public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
