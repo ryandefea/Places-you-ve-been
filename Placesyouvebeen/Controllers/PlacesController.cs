@@ -7,38 +7,38 @@ namespace PlacesYouveBeen.Controllers
   public class PlacesController : Controller
   {
 
-    [HttpGet("/items")] 
+    [HttpGet("/places")] 
     public ActionResult Index()
     {
-      List<Item> allItems = Item.GetAll();
-      return View(allItems);
+      List<Place> allPlaces = Place.GetAll();
+      return View(allPlaces);
     }
     
-    [HttpGet("/items/new")]
+    [HttpGet("/places/new")]
     public ActionResult New()
     {
       return View();
     }
 
-    [HttpPost("/items")]
-    public ActionResult Create(string description)
+    [HttpPost("/places")]
+    public ActionResult Create(string cityName)
     {
-      Item myItem = new Item(description);
+      Place myPlace = new Place(cityName);
       return RedirectToAction("Index");
     }
 
-    [HttpPost("/items/delete")]
+    [HttpPost("/places/delete")]
     public ActionResult DeleteAll()
     {
-      Item.ClearAll();
+      Place.ClearAll();
       return View();
     }
 
-    [HttpGet("/items/{id}")]
+    [HttpGet("/places/{id}")]
     public ActionResult Show(int id)
     {
-      Item foundItem = Item.Find(id);
-      return View(foundItem);
+      Place foundPlace = Place.Find(id);
+      return View(foundPlace);
     }
   }
 }
