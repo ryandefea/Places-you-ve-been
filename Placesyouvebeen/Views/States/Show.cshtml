@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Places you've been!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+  @using PlacesYouveBeen.Models;
+
+  <h3>Here are all the place in the state test</h3>
+
+<ol>
+@foreach (Place place in @Model["places"])
+  {
+    <h2> testing this </h2>
+   <li><a href='/states/@Model["state"].Id/places/@place.Id'>@place.CityName</a></li>
+  }
+  </ol>
+ <p><a href='/states/@Model["state"].Id/places/new'>Add a new place</a></p>
+    <p><a href='/states'>Return to state list</a></p>
+    <p><a href='/'>Return to Main Page</a></p>
+</body>
+
+</html>

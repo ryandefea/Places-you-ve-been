@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Places you've been!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+  <h1>Add a state</h1>
+  <p>Add a state here:</p>
+
+  <form action="/states" method="post">
+    <label for="stateName">State name</label>
+    <input id="stateName" name="stateName" type="text">
+    <button type="submit">Add</button>
+  </form>
+
+  <p><a href="/">Back home</a></p>
+  <p><a href="/states">Back to states.</a></p>
+</body>
+
+</html>

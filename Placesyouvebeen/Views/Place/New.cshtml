@@ -6,9 +6,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
   <body>
-    <form action="/places" method="post">
-      <label for="cityName">Add a new place</label>
+  <h1>Add a new city to @Model.Name</h1>
+
+    <form action="/states/@Model.Id/places" method="post">
+      <input id="stateName" name="stateName" type="hidden" value="@Model.Id">
+      <label for="stateName">Add a new state</label>
       <input id="cityName" name="cityName" type="text">
+      <label for="cityName">Add a new place</label>
       <button type="submit">Submit</button>
     </form>
   </body>

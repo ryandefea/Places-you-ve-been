@@ -4,27 +4,14 @@ using System.Collections.Generic;
 
 namespace PlacesYouveBeen.Controllers
 {
-  public class PlacesController : Controller
+  public class PlaceController : Controller
   {
-
-    [HttpGet("/places")] 
-    public ActionResult Index()
-    {
-      List<Place> allPlaces = Place.GetAll();
-      return View(allPlaces);
-    }
     
-    [HttpGet("/places/new")]
-    public ActionResult New()
+    [HttpGet("/states/{stateId}/places/new")]
+    public ActionResult New(int stateId)
     {
-      return View();
-    }
-
-    [HttpPost("/places")]
-    public ActionResult Create(string cityName)
-    {
-      Place myPlace = new Place(cityName);
-      return RedirectToAction("Index");
+      State state = State.Find(stateId);
+      return View(state);
     }
 
     [HttpPost("/places/delete")]
@@ -34,11 +21,15 @@ namespace PlacesYouveBeen.Controllers
       return View();
     }
 
-    [HttpGet("/places/{id}")]
-    public ActionResult Show(int id)
+    [HttpGet("/states/{stateId}/places/{placeId}")]
+    public ActionResult Show(int stateId, int placeId)
     {
-      Place foundPlace = Place.Find(id);
-      return View(foundPlace);
+      Place place = Place.Find(placeId);
+      State state = State.Find(stateId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("place", place);
+      model.Add("state", state);
+      return View(model);
     }
   }
 }
